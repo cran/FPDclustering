@@ -1,0 +1,2 @@
+import(ThreeWay)
+export(FPDC, PDclust, Silh, TuckerFactors)
