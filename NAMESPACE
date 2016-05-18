@@ -1,2 +1,4 @@
 import(ThreeWay)
+importFrom("graphics", "axis", "barplot", "legend", "matplot", "plot")
+importFrom("stats", "runif")
 export(FPDC, PDclust, Silh, TuckerFactors)

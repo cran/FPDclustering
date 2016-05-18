@@ -32,7 +32,7 @@ PDclust<- function(data=NULL,  k=2) {
 
 ver=100
 cont=0
-
+#JDFv=matrix(0,1000,1)
 while(ver>0.001 & cont<1000){
   cont=cont+1
   c=cnew
@@ -46,13 +46,14 @@ while(ver>0.001 & cont<1000){
   
   #STEP 2
   #computation of centers and probabilities
+  t=matrix(1,n,k)
   p=matrix(0,n,k)
   for( i in 1:k){
-    t2=matrix(dis[,i],n,k)
-    t=t2/dis
-    p[,i]=rowSums(t)
-  }
-  p=1/p
+    t2=as.matrix(dis[,-i])
+    t[,i]=apply(t2,1,prod)}
+    tot=apply(t,1,sum)
+    p=t/tot
+
   u=p^2/dis
   m=u/matrix(colSums(u),n,k,1)
   cnew=t(m)%*%data
@@ -61,13 +62,13 @@ while(ver>0.001 & cont<1000){
   ver1=matrix(0,1,k)
   for( j in 1:k){
     ver1[j]=sqrt(sum((cnew[j,]-c[j,])^2))
-  end
-  ver=sum(ver1)}
-  
+  }
+  ver=sum(ver1)
+ #JDFv[cont,]= sum(mean(dis*p))
 }
   if( cont==1000){
   print('Convergence not reached')}
-
+#JDFv=JDFv[1:cont,],JDFv=JDFv
   #memebership definition according to the maximum probability
   l=max.col(p)
   # computation of JDF

@@ -32,18 +32,19 @@ FPDC(data = NULL, k = 2, nf = 2, nu = 2)
  \item{centers }{A matrix of cluster centers}
  \item{probability }{A matrix of probability of each point belonging to each cluster}
  \item{JDF }{The value of the Joint distance function}
- \item{JDFIter }{A vector indicating the value of the JDF at each iteration}
  \item{iter}{The number of iterations}
  \item{explained }{The explained variability}
 %% ...
 }
-\references{Tortora C.,  Gettler Summa M., and  Palumbo F..
+\references{
+	Tortora, C., M. Gettler Summa, M. Marino, and F. Palumbo. \emph{Factor probabilistic distance clustering
+		(fpdc): a new clustering method for high dimensional data sets}. Advanced in Data Analysis and Classification, to appear, 2016.
+	
+	Tortora C.,  Gettler Summa M., and  Palumbo F..
 Factor pd-clustering. In Lausen et al., editor, \emph{Algorithms from and for Nature and Life, Studies in Classification}, Data Analysis, and Knowledge Organization DOI 10.1007/978-3-319-00035-011, 115-123, 2013.
 
 Tortora C., \emph{Non-hierarchical clustering methods on factorial subspaces}, 2012.
 
-Tortora C.,  Palumbo F., and Gettler Summa M..
-Factor pd-clustering. \emph{arXiv:1106.3830v1}, working paper, 2011
 %% ~put references to the literature/web site here ~
 }
 \author{Cristina Tortora and Paul D. McNicholas
@@ -78,7 +79,7 @@ Silh(fpdas20$probability)
 # Clustering example with outliers.
 data('outliers')
 x<-outliers[,-1]
-fpdout=FPDC(x,4,4,3)
+fpdout=FPDC(x,4,5,4)
 table(outliers[,1],fpdout$label)
 Silh(fpdout$probability)
 }

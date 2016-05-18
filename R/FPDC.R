@@ -24,7 +24,7 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
   nco=k #check if the number of clusters change
   JDF=(1/.Machine$double.eps)-1#  Join Distance Function
   JDFo=(1/.Machine$double.eps)
-  JDFv=0 #to verify the convrgence
+ # JDFv=0 #to verify the convergence
   expl=matrix(0,1,100)
   #Step0: inizialization of centers
  # km=kmeans(data, nc)
@@ -57,13 +57,16 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
     }
     
     #Computation of probabilities
+    t=matrix(1,n,k)
     p=matrix(0,n,k)
     for( i in 1:k){
-      t2=matrix(dis[,i],n,k)
-      t=t2/dis
-      p[,i]=rowSums(t)
-    }
-    p=1/p
+      t2=as.matrix(dis[,-i])
+      t[,i]=apply(t2,1,prod)}
+    tot=apply(t,1,sum)
+    p=t/tot
+    
+    
+
     #Step 2 Tucker3
     
     nfc=k
@@ -93,8 +96,7 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
     #Step 5 update of centers
     c=c%*%t(tuk2)
     
-    #labeling according to the higest probability
-    l=max.col(p)#pd$p
+ 
     
 #     %check: if two centers are equal K=K-1
 #     if nc>2
@@ -106,13 +108,14 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
 #     end
     #criteria update
 
-    JDF=dis[,1]%*%p[,1]
-    JDFv=cbind(JDFv,JDF)
+    JDF=dis[,1]%*%p[,1]^2
+  #  JDFv=cbind(JDFv,JDF)
     cat(paste("Iteration number", iter), fill = TRUE)
   }
-  
-  JDFv=JDFv[2:(iter+1)]
+  #labeling according to the higest probability
+  l=max.col(p)#pd$p
+  #JDFv=JDFv[2:(iter+1)] JDFIter=JDFv,
   expl=expl[1:iter]
-  out=list(label=l, centers=c, probability=p, JDF=JDF, JDFIter=JDFv, iter=iter, explained=expl)
+  out=list(label=l, centers=c, probability=p, JDF=JDF,  iter=iter, explained=expl)
   out
 }
