@@ -22,7 +22,7 @@ Silh(p)
 where \eqn{m_k} is such that \eqn{x_i} belongs to cluster \eqn{k} and \eqn{m_1} is such that \eqn{p_{im_1}} is maximum for \eqn{m} different from\eqn{m_k}.
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{ Probabilistic shilouette plot
+\value{ Probabilistic silhouette plot
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -38,7 +38,7 @@ where \eqn{m_k} is such that \eqn{x_i} belongs to cluster \eqn{k} and \eqn{m_1} 
 
 \examples{
 \dontrun{
-# Asymmetric data set shiluette example (with shape=3).
+# Asymmetric data set silhouette example (with shape=3).
 data('asymmetric3')
 x<-asymmetric3[,-1]
 fpdas3=FPDC(x,4,3,3)
