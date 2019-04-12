@@ -1,4 +1,4 @@
-import(ThreeWay)
+import(ThreeWay,ExPosition,cluster,mvtnorm)
 importFrom("graphics", "axis", "barplot", "legend", "matplot", "plot")
 importFrom("stats", "runif")
-export(FPDC, PDclust, Silh, TuckerFactors)
+export(FPDC, PDclust, Silh, TuckerFactors, PDQ)
