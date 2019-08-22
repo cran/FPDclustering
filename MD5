@@ -1,4 +1,4 @@
-90f06155dc8ae669a6ed1347bec804db *DESCRIPTION
+5d354ad6b155a75dfc90e5ed805860ef *DESCRIPTION
 da4d83a2120b7069d12c2ab9f99e1b85 *NAMESPACE
 4b74a8dc8b5f499cd9105822369b94d5 *R/FPDC-internal.R
 d3d6f7947ad8b0c84b8343891941d517 *R/FPDC.R
@@ -9,7 +9,7 @@ b7f02c543b55d9d0b9737ecfe2ee2fa4 *R/PDQ.R
 cde2b1bde151b68df70ac4edc41af2f4 *R/disS.R
 0dcb842e82ecd42665bfea83684cbf08 *data/asymmetric20.rda
 4d60ca61fe1410ee6486971713cacaee *data/asymmetric3.rda
-ba612f1951cc6df59ed808167441c8c0 *data/datalist
+00c74568ba226bcb458dcf1c982aaacf *data/datalist
 585e2f2566e680f7d1ecc219f964c149 *data/outliers.rda
 71bc94c98c8e8c106f28534cd9e8ce63 *man/FPDC.Rd
 fc9e8d894ced092c4652f410fbad9047 *man/PDQ.Rd
