@@ -1,4 +1,4 @@
-import(ThreeWay,ExPosition,cluster,mvtnorm)
+import(ThreeWay,ExPosition,cluster,mvtnorm,rootSolve)
 importFrom("graphics", "axis", "barplot", "legend", "matplot", "plot")
-importFrom("stats", "runif")
-export(FPDC, PDclust, Silh, TuckerFactors, PDQ)
+importFrom("stats", "runif", "cov", "cov.wt", "cov2cor", "mahalanobis")
+export(FPDC, PDclust, Silh, TuckerFactors, PDQ,GPDC, TPDC)
