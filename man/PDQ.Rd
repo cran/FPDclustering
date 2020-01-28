@@ -40,6 +40,7 @@ PDQ(data=NULL,K=2,method="random", distance="euc", cent=NULL)
 }
 \references{
 	Iyigun, Cem, and Adi Ben-Israel. \emph{Probabilistic distance clustering adjusted for cluster size.} Probability in the Engineering and Informational Sciences 22.4 (2008): 603-621.
+doi.org/10.1017/S0269964808000351.
 
 %% ~put references to the literature/web site here ~
 }

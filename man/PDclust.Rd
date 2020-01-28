@@ -32,7 +32,7 @@ PDclust(data = NULL, k = 2)
  \item{JDF }{The value of the Joint distance function}
  \item{iter}{The number of iterations}
 }
-\references{Ben-Israel A, Iyigun. Probabilistic D-Clustering.\emph{ Journal of Classification}, \bold{25}(1), 5--26, 2008.
+\references{Ben-Israel C. and  Iyigun C. Probabilistic D-Clustering.\emph{ Journal of Classification}, \bold{25}(1), 5--26, 2008.
 %% ~put references to the literature/web site here ~
 }
 \author{Cristina Tortora and Paul D. McNicholas

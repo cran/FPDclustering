@@ -38,7 +38,7 @@ FPDC(data = NULL, k = 2, nf = 2, nu = 2)
 }
 \references{
 	Tortora, C., M. Gettler Summa, M. Marino, and F. Palumbo. \emph{Factor probabilistic distance clustering
-		(fpdc): a new clustering method for high dimensional data sets}. Advanced in Data Analysis and Classification, to appear, 2016.
+		(fpdc): a new clustering method for high dimensional data sets}. Advanced in Data Analysis and Classification,  10(4), 441-464, 2016. doi:10.1007/s11634-015-0219-5.
 	
 	Tortora C.,  Gettler Summa M., and  Palumbo F..
 Factor pd-clustering. In Lausen et al., editor, \emph{Algorithms from and for Nature and Life, Studies in Classification}, Data Analysis, and Knowledge Organization DOI 10.1007/978-3-319-00035-011, 115-123, 2013.

@@ -39,9 +39,9 @@ GPDC(data=NULL,k=2,method="kmedoids", nr=5,iter=100)
 %% ...
 }
 \references{
-	Tortora C., McNicholas P.D.,  and Palumbo F. \emph{A probabilistic distance clustering algorithm using Gaussian and Student-t multivariate density distributions.} SN Computer Science (to appear).
+	Tortora C., McNicholas P.D.,  and Palumbo F. \emph{A probabilistic distance clustering algorithm using Gaussian and Student-t multivariate density distributions.} SN Computer Science (to appear) 2020.
 
-C. Rainey, C. Tortora and F.Palumbo.\emph{ A parametric version of probabilistic distance clustering}. In: Greselin F., Deldossi L., Bagnato L., Vichi M. (eds) Statistical Learning of Complex Data. CLADAG 2017. Studies in Classification, Data Analysis, and Knowledge Organization. Springer, Cham, 33-43 2019 
+C. Rainey, C. Tortora and F.Palumbo.\emph{ A parametric version of probabilistic distance clustering}. In: Greselin F., Deldossi L., Bagnato L., Vichi M. (eds) Statistical Learning of Complex Data. CLADAG 2017. Studies in Classification, Data Analysis, and Knowledge Organization. Springer, Cham, 33-43 2019. doi.org/10.1007/978-3-030-21140-0_4
 
 %% ~put references to the literature/web site here ~
 }
@@ -55,7 +55,7 @@ C. Rainey, C. Tortora and F.Palumbo.\emph{ A parametric version of probabilistic
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-data(ais,package="DAAG")
+data(ais)
 dataSEL=ais[,c(10,3,5,8)]
 res=GPDC(dataSEL,k=2,method = "kmedoids")
 table(res$label,ais$sex)
