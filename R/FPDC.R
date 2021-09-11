@@ -81,7 +81,7 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
     tuk=data%*%tuk2 
     
     #Step 4 PDclustering
-   pd=PDclust(tuk,k)
+   pd=PDC(tuk,k)
     c=pd$centers
     
 #     %check for NaN
@@ -116,6 +116,7 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
   l=max.col(p)#pd$p
   #JDFv=JDFv[2:(iter+1)] JDFIter=JDFv,
   expl=expl[1:iter]
-  out=list(label=l, centers=c, probability=p, JDF=JDF,  iter=iter, explained=expl)
-  out
+  out=list(label=l, centers=c, probability=p, JDF=JDF,  iter=iter, explained=expl,data=data)
+  class(out) <- "FPDclustering"
+   out
 }

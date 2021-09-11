@@ -41,7 +41,7 @@ GPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
    l=temp.l[[which(JDFini==min(JDFini))[1]]]
    }
  else if(method=="PDclust"){
-   ini=PDclust(data,k)
+   ini=PDC(data,k)
    center=ini$centers
    l=ini$label
  }
@@ -53,7 +53,8 @@ GPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
  #check classification
  class<-apply(update$probability,1,which.max)
  #output 
- out<-list(label=class,centers=update$centers,sigma=update$sigma,probability=update$probability,JDF=update$JDF, iter=update$iter)
+ out<-list(label=class,centers=update$centers,sigma=update$sigma,probability=update$probability,JDF=update$JDF, iter=update$iter,data=data)
+ class(out) <- "FPDclustering"
  return(out)
 }
   #km=kmeans(data, k)
@@ -181,7 +182,8 @@ GPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
   #memebership definition according to the maximum probability
 
   # computation of JDF
-  out=list(centers=cnew,sigma=sigma, probability=p,iter=cont,JDF=JDFv)
+  out=list(centers=cnew,sigma=sigma, probability=p,iter=cont,JDF=JDFv,data=data)
+
   out
  }
 

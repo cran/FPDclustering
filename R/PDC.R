@@ -1,4 +1,4 @@
-PDclust<- function(data=NULL,  k=2) {
+PDC<- function(data=NULL,  k=2) {
   # Cluster the data whit pd-clustering Algoritmh
   #
   #
@@ -73,6 +73,7 @@ while(ver>0.001 & cont<1000){
   l=max.col(p)
   # computation of JDF
   JDF=sum(mean(dis*p))
-  out=list(label=l, centers=cnew, probability=p, JDF=JDF,iter=cont)
+  out=list(label=l, centers=cnew, probability=p, JDF=JDF,iter=cont,data=data)
+  class(out) <- "FPDclustering"
   out
 }

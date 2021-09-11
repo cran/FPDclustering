@@ -1,5 +1,5 @@
-\name{PDclust}
-\alias{PDclust}
+\name{PDC}
+\alias{PDC}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{Probabilistic Distance Clustering
 %%  ~~function to do ... ~~
@@ -8,7 +8,7 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-PDclust(data = NULL, k = 2)
+PDC(data = NULL, k = 2)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -54,9 +54,13 @@ x1 = cbind(rnorm(n, c1[1]), rnorm(n, c1[2]), rnorm(n, c1[3]), rnorm(n, c1[4]) )
 x2 = cbind(rnorm(n, c2[1]), rnorm(n, c2[2]),rnorm(n, c2[3]), rnorm(n, c2[4]) )
 x3 = cbind(rnorm(n, c3[1]), rnorm(n, c3[2]),rnorm(n, c3[3]), rnorm(n, c3[4]) )
 x = rbind(x1,x2,x3)
-pdn=PDclust(x,3)
-plot(x[,1:2],col=pdn$label)
-plot(x[,3:4],col=pdn$label)
+
+#Clustering
+pdn=PDC(x,3)
+
+#Results
+plot(pdn)
+
 }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the

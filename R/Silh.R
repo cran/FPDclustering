@@ -27,4 +27,5 @@ tic=ll+pl
   barplot(ss,space=0, main="Silhouette plot", horiz=TRUE,xlab='Silhouette Value', ylab='Cluster',xpd=F,axes = FALSE)
 axis(2,at=tic, labels=(1:nc))
 axis(1,at=c(0,0.5,1), labels=c(round(1/nc,2),round((1/nc+1)/2,2),1))
+return(mean(ss))
 }

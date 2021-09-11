@@ -20,7 +20,7 @@ J=ncol(data)
 
 
 #%Computation of distance array G
-pd=PDclust(data,nc)
+pd=PDC(data,nc)
 c=pd$centers
 
 ddt=matrix(0,n,nc*J)

@@ -45,7 +45,8 @@ TPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
   #check classification
   class<-apply(update$probability,1,which.max)
   #output 
-  out<-list(label=class,centers=update$centers,sigma=update$sigma,df=update$df,probability=update$probability,JDF=update$JDF, iter=update$cont)
+  out<-list(label=class,centers=update$centers,sigma=update$sigma,df=update$df,probability=update$probability,JDF=update$JDF, iter=update$cont,data=data)
+  class(out) <- "FPDclustering"
   return(out)
 }
 

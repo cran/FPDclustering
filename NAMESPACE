@@ -1,4 +1,9 @@
-import(ThreeWay,ExPosition,cluster,mvtnorm,rootSolve)
+import(ThreeWay,ExPosition,cluster,mvtnorm,rootSolve,MASS,klaR,GGally)
 importFrom("graphics", "axis", "barplot", "legend", "matplot", "plot")
 importFrom("stats", "runif", "cov", "cov.wt", "cov2cor", "mahalanobis")
-export(FPDC, PDclust, Silh, TuckerFactors, PDQ,GPDC, TPDC)
+importFrom("graphics", "pairs","par")
+importFrom("ggplot2", "ggtitle","theme_bw")
+export(FPDC, PDC, Silh, TuckerFactors, PDQ,GPDC, TPDC)
+S3method(summary,FPDclustering)
+S3method(plot,FPDclustering)
+

@@ -7,7 +7,7 @@
 \description{Data obtained to study sex, sport and body-size dependency of hematology in highly trained athletes.
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
-\usage{data(asymmetric3)}
+\usage{data(ais)}
 \format{
  A data frame with 202 observations and 13 variable.
  \describe{

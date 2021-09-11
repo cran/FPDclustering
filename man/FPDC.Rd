@@ -53,7 +53,7 @@ Tortora C., \emph{Non-hierarchical clustering methods on factorial subspaces}, 2
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{PDclust}}
+\seealso{\code{\link{PDC}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
@@ -61,27 +61,45 @@ Tortora C., \emph{Non-hierarchical clustering methods on factorial subspaces}, 2
 # Asymmetric data set clustering example (with shape=3).
 data('asymmetric3')
 x<-asymmetric3[,-1]
+
+#Clustering
 fpdas3=FPDC(x,4,3,3)
+
+#Results
 table(asymmetric3[,1],fpdas3$label)
 Silh(fpdas3$probability)
+summary(fpdas3)
+plot(fpdas3)
 }
 
 \dontrun{
 # Asymmetric data set clustering example (with shape=20).
 data('asymmetric20')
 x<-asymmetric20[,-1]
+
+#Clustering
 fpdas20=FPDC(x,4,3,3)
+
+#Results
 table(asymmetric20[,1],fpdas20$label)
 Silh(fpdas20$probability)
+summary(fpdas20)
+plot(fpdas20)
 }
 
 \dontrun{
 # Clustering example with outliers.
 data('outliers')
 x<-outliers[,-1]
+
+#Clustering
 fpdout=FPDC(x,4,5,4)
+
+#Results
 table(outliers[,1],fpdout$label)
 Silh(fpdout$probability)
+summary(fpdout)
+plot(fpdout)
 }
 }
 

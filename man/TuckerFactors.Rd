@@ -1,10 +1,10 @@
 \name{TuckerFactors}
 \alias{TuckerFactors}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Choice of the number of Tucker 3 factors
+\title{Choice of the number of Tucker 3 factors for FPDC
 %%  ~~function to do ... ~~
 }
-\description{ An empirical way of choosing the number of factors. The algorithm returns a graph and a table representing the explained variability varying the number of factors.
+\description{ An empirical way of choosing the number of factors. The function returns a graph and a table representing the explained variability varying the number of factors.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{

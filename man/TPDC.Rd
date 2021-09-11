@@ -17,7 +17,7 @@ TPDC(data=NULL,k=2,method="kmedoids", nr=5,iter=100)
   \item{k}{A numerical parameter giving the number of clusters
 %%     ~~Describe \code{K} here~~
 }
-  \item{method}{A parameter that selects center starts. Options available are random, kmedoid, and PDclust
+  \item{method}{A parameter that selects center starts. Options available are random, kmedoid, and PDC
 %%     ~~Describe \code{method} here~~
 }
   \item{nr}{Number of random starts
@@ -51,15 +51,22 @@ C. Rainey, C. Tortora and F.Palumbo.\emph{ A parametric version of probabilistic
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{PDclust},\link{PDQ}}
+\seealso{\code{\link{PDC},\link{PDQ}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+#Load the data
 data(ais)
 dataSEL=ais[,c(10,3,5,8)]
+
+#Clustering
 res=TPDC(dataSEL,k=2,method = "kmedoids")
+
+#Results
 table(res$label,ais$sex)
-pairs(dataSEL,col=res$label,pch=res$label)
+summary(res)
+plot(res)
 }
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
