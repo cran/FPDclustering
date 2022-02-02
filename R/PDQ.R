@@ -131,7 +131,8 @@ corePDQ<- function(data=NULL,K,center,N,J,iter=100,clus.size,distance,ord.loc=NU
         #calculate gower distance
         if(distance=="gower")
         {
-            dist.m<- gowers_dist(data, center=center,K=K, ord.loc,cat.loc,bin.loc,cont.loc,weights)
+        
+             dist.m<- gowers_dist(data, center=center,K=K, ord.loc,cat.loc,bin.loc,cont.loc,weights)
         }
         
         #calculate eucledian distance
@@ -346,6 +347,7 @@ gowers_dist<-function(data,center, K,ord.loc=NULL,cat.loc=NULL,bin.loc=NULL,cont
     #   data.check<-lapply(apply(data,2,unique),length)
     #   bin.loc<-as.vector(which(unlist(data.check)==2))
     # }
+ 
     
     dist.mat<-matrix(0,nrow=nrow(data), ncol=K)
     for(l in 1:nrow(data))
@@ -364,16 +366,17 @@ gowers_dist<-function(data,center, K,ord.loc=NULL,cat.loc=NULL,bin.loc=NULL,cont
                     #else{temp.vec[i]<-((data[l,i]-center[m,i])^2)}
                 }
                 if(sum(i==cont.loc)!=0)
-                {
+                { den=(mean(data[,i]))
+                if(den<0.1&den>-0.1)den=1
                     if(!is.null(weights))
                     {
                        # temp.vec[i]<-(weights[i]*(abs(data[l,i]-center[m,i])/(max(data[,i])-min(data[,i]))))/sum(weights)
-                        temp.vec[i]<-(weights[i]*(data[l,i]-center[m,i])^2)/sum(weights)
+                       
+                       temp.vec[i]<-(weights[i]*((data[l,i]-center[m,i])/den)^2)/sum(weights)
                         
-
                         }
                     #else{temp.vec[i]<-(abs(data[l,i]-center[m,i])/(max(data[,i])-min(data[,i])))}
-                    else{temp.vec[i]<-((data[l,i]-center[m,i])^2)}
+                    else{temp.vec[i]<-((data[l,i]-center[m,i])/den)^2}
                 }
                 if(sum(i==cat.loc)!=0){
                     if(!is.null(weights))
@@ -389,8 +392,8 @@ gowers_dist<-function(data,center, K,ord.loc=NULL,cat.loc=NULL,bin.loc=NULL,cont
                     {
                         temp.vec[i]<-((weights[i]*(abs(center[m,i]-data[l,i]))/(max(data[,i])-min(data[,i])))/sum(weights))^2
                     }
-                    #else{temp.vec[i]<-(abs(center[m,i]-data[l,i]))/(max(data[,i])-min(data[,i]))}
-                    else{temp.vec[i]<-(center[m,i]-data[l,i])^2}
+                    else{temp.vec[i]<-(abs(center[m,i]-data[l,i]))/(max(data[,i])-min(data[,i]))}
+                    #else{temp.vec[i]<-(center[m,i]-data[l,i])^2}
                 }
             }
             #euc.dis<-sqrt(sum(temp.vec[c(cont.loc)]))*(length(cont.loc)/length(label))+sqrt(sum(temp.vec[c(ord.loc)]))*(length(ord.loc)/length(label))

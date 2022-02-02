@@ -39,6 +39,11 @@ TPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
       update=corePDT(data,k,center,s,n=nrow(data),J=ncol(data),iter=4)
       JDFini[t]=update$JDF}
     center= temp.center[[which(JDFini==min(JDFini))[1]]]}
+  else if(method=="PDclust"){
+    ini=PDC(data,k)
+    center=ini$centers
+    l=ini$label
+  }
   else{center=pam(data,k)$medoids}
   cnew=center
   update=corePDT(data,k,cnew,s,n=nrow(data),J=ncol(data),iter=iter)

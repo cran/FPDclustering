@@ -4,7 +4,7 @@
 \title{Probabilistic Distance Clustering
 %%  ~~function to do ... ~~
 }
-\description{Probabilistic distance clustering (PD-clustering) is an iterative, distribution free, probabilistic clustering method. PD clustering assigns units to a cluster according to their probability of membership, under the constraint that the product of the probability and the distance of each point to any cluster centre is a constant.
+\description{Probabilistic distance clustering (PD-clustering) is an iterative, distribution free, probabilistic clustering method. PD clustering is based on the constraint that the product of the probability and the distance of each point to any cluster centre is a constant.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -20,7 +20,7 @@ PDC(data = NULL, k = 2)
 }
 }
 
-\value{ A list with components
+\value{ A class FPDclustering list with components
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -31,8 +31,9 @@ PDC(data = NULL, k = 2)
  \item{probability }{A matrix of probability of each point belonging to each cluster}
  \item{JDF }{The value of the Joint distance function}
  \item{iter}{The number of iterations}
+  \item{data }{the data set}
 }
-\references{Ben-Israel C. and  Iyigun C. Probabilistic D-Clustering.\emph{ Journal of Classification}, \bold{25}(1), 5--26, 2008.
+\references{Ben-Israel C. and  Iyigun C. Probabilistic D-Clustering.\emph{ Journal of Classification}, \bold{25}(1), 5-26, 2008.
 %% ~put references to the literature/web site here ~
 }
 \author{Cristina Tortora and Paul D. McNicholas

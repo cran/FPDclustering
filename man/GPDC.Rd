@@ -17,17 +17,17 @@ GPDC(data=NULL,k=2,method="kmedoids", nr=5,iter=100)
   \item{k}{A numerical parameter giving the number of clusters
 %%     ~~Describe \code{K} here~~
 }
-  \item{method}{A parameter that selects center starts. Options available are random, kmedoid, and PDC
+  \item{method}{A parameter that selects center starts. Options available are random ("random"), kmedoid ("kmedoid", by default), and PDC ("PDclust").
 %%     ~~Describe \code{method} here~~
 }
-  \item{nr}{Number of random starts
+  \item{nr}{Number of random starts when method set to "random"
 %%     ~~Describe \code{method} here~~
 }
   \item{iter}{Maximum number of iterations
 %%     ~~Describe \code{method} here~~
 }
 }
-\value{ A list with components
+\value{ A class FPDclustering list with components
 %%  ~Describe the value returned
 %%  If it is a LIST, use label=l, centers=c, probability=p, JDF=JDF, JDFIter=JDFv, iter=iter, explained
  \item{label }{A vector of integers indicating the cluster membership for each unit}
@@ -36,10 +36,11 @@ GPDC(data=NULL,k=2,method="kmedoids", nr=5,iter=100)
  \item{probability }{A matrix of probability of each point belonging to each cluster}
  \item{JDF }{The value of the Joint distance function}
  \item{iter}{The number of iterations}
+   \item{data }{the data set}
 %% ...
 }
 \references{
-	Tortora C., McNicholas P.D.,  and Palumbo F. \emph{A probabilistic distance clustering algorithm using Gaussian and Student-t multivariate density distributions.} SN Computer Science (to appear) 2020.
+	Tortora C., McNicholas P.D.,  and Palumbo F. \emph{A probabilistic distance clustering algorithm using Gaussian and Student-t multivariate density distributions.} SN Computer Science, 1:65, 2020.
 
 C. Rainey, C. Tortora and F.Palumbo.\emph{ A parametric version of probabilistic distance clustering}. In: Greselin F., Deldossi L., Bagnato L., Vichi M. (eds) Statistical Learning of Complex Data. CLADAG 2017. Studies in Classification, Data Analysis, and Knowledge Organization. Springer, Cham, 33-43 2019. doi.org/10.1007/978-3-030-21140-0_4
 

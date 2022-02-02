@@ -4,7 +4,7 @@
 \title{Choice of the number of Tucker 3 factors for FPDC
 %%  ~~function to do ... ~~
 }
-\description{ An empirical way of choosing the number of factors. The function returns a graph and a table representing the explained variability varying the number of factors.
+\description{ An empirical way of choosing the number of factors for FPDC. The function returns a graph and a table representing the explained variability varying the number of factors.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -20,7 +20,7 @@ TuckerFactors(data = NULL, nc = 2)
 }
 }
 
-\value{A table containing the explained variability varying the number of factors for units (column) and for variables (row) and a plot
+\value{A table containing the explained variability varying the number of factors for units (column) and for variables (row) and the corresponding plot
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

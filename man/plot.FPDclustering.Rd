@@ -8,12 +8,15 @@ Plots for FPDclusteringt Objects
 Probability Silhouette plot, Scatterplot up to 10 varaibles, and  parallel coordinate plot up to 10 variables, for objects of class FPDclustering.
 }
 \usage{
-\method{plot}{FPDclustering}(x, ... ) 
+\method{plot}{FPDclustering}(x, maxVar=30, ... ) 
 }
 
 \arguments{
   \item{x}{
 an object of class FPDclustering
+}
+  \item{maxVar}{
+a scalar indicating the maximum number of variables to display on the parallel plot, 30 by default
 }
 \item{...}{Additional parameters for the function paris}
  

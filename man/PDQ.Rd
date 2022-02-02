@@ -1,9 +1,9 @@
 \name{PDQ}
 \alias{PDQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Probabilistic Clustering Adjusted for Cluster Size 
+\title{Probabilistic Distance Clustering Adjusted for Cluster Size 
 }
-\description{ An implementation of PDQ, a probabilistic distance clustering algorithm that involves optimizing the PD-clustering criterion with the option  of Euclidean, Gower and Chi square as dissimilarity measurments. 
+\description{ An implementation of probabilistic distance clustering adjusted for cluster size (PDQ), a probabilistic distance clustering algorithm that involves optimizing the PD-clustering criterion. The algorithm can be used, on continous, count, or mixed type data setting Euclidean, Chi square, or Gower  as dissimilarity measurments. 
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -16,29 +16,31 @@ PDQ(x=NULL,k=2,ini='kmd',dist='euc',cent=NULL,ord=NULL,cat=NULL,bin=NULL,cont=NU
   \item{x}{ A matrix or data frame such that rows correspond to observations and columns correspond to variables.
 %%     ~~Describe \code{data} here~~
 }
-  \item{k}{A numerical parameter giving the number of clusters
+  \item{k}{A numerical parameter giving the number of clusters.
 %%     ~~Describe \code{k} here~~
 }
-  \item{ini}{A parameter that selects center starts. Options available are random, kmedoid, center(user inputs center starts) and kmode
+  \item{ini}{A parameter that selects center starts. Options available are random ("random"), kmedoid ("kmd", by default"), center ("center", the user inputs the center), and kmode ("kmode", for categoriacal data sets).
 %%     ~~Describe \code{method} here~~
 }
-  \item{dist}{A parameter that selects the distance measure used. Options available are Eucledean (euc), Gower (gower) and chi square (chi).
+  \item{dist}{A parameter that selects the distance measure used. Options available are Eucledean ("euc"), Gower ("gower") and chi square ("chi").
 %%     ~~Describe \code{method} here~~
 }
-  \item{cent}{User inputed centers if method selected is "random"
+  \item{cent}{User inputed centers if method selected is "random".
 %%     ~~Describe \code{cent} here~~
 }  
-\item{ord}{location of the ordinal variables
+\item{ord}{column indices of the x matrix indicating which columns are ordinal variables.
 %%     ~~Describe \code{method} here~~
 }
-\item{cat}{location of the categorical variables
+\item{cat}{column indices of the x matrix indicating which columns are  categorical variables.
 %%     ~~Describe \code{cent} here~~
 }  
-\item{bin}{location of the binary variables
+\item{bin}{column indices of the x matrix indicating which columns are  binary variables.
 %%     ~~Describe \code{cent} here~~
 }  
-\item{cont}{location of the continuous variables}
-\item{w}{numerical vector same length as the columns of the data, ccontaining the variable weights when using Gower distance, equal weight  by default}
+\item{cont}{column indices of the x matrix indicating which columns are  continuous variables.
+}
+\item{w}{numerical vector same length as the columns of the data, ccontaining the variable weights when using Gower distance, equal weights  by default.
+}
 %%     ~~Describe \code{cent} here~~
 
 }

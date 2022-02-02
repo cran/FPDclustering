@@ -1,10 +1,10 @@
 \name{asymmetric20}
 \alias{asymmetric20}
 \docType{data}
-\title{Asymmetric data set shape=20
+\title{Asymmetric data set shape 20
 %%   ~~ data name/kind ... ~~
 }
-\description{Each cluster has been generated according to a multivariate asymmetric Gaussian distribution, with shape=20, covariance matrix equal to the identity matrix and randomly generated centres.
+\description{Each cluster has been generated according to a multivariate asymmetric Gaussian distribution, with shape 20, covariance matrix equal to the identity matrix and randomly generated centres.
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data(asymmetric20)}

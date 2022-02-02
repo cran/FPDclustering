@@ -4,7 +4,7 @@
 \title{Probabilistic silhouette plot
 %%  ~~function to do ... ~~
 }
-\description{ Graphical tool to see how well each point belongs to the cluster.
+\description{ Graphical tool to evaluate the clustering partition.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{

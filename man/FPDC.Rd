@@ -25,7 +25,7 @@ FPDC(data = NULL, k = 2, nf = 2, nu = 2)
 }
 }
 
-\value{ A list with components
+\value{ A class FPDclustering list with components
 %%  ~Describe the value returned
 %%  If it is a LIST, use label=l, centers=c, probability=p, JDF=JDF, JDFIter=JDFv, iter=iter, explained
  \item{label }{A vector of integers indicating the cluster membership for each unit}
@@ -34,6 +34,7 @@ FPDC(data = NULL, k = 2, nf = 2, nu = 2)
  \item{JDF }{The value of the Joint distance function}
  \item{iter}{The number of iterations}
  \item{explained }{The explained variability}
+\item{data }{the data set}
 %% ...
 }
 \references{
@@ -58,7 +59,7 @@ Tortora C., \emph{Non-hierarchical clustering methods on factorial subspaces}, 2
 }
 \examples{
 \dontrun{
-# Asymmetric data set clustering example (with shape=3).
+# Asymmetric data set clustering example (with shape 3).
 data('asymmetric3')
 x<-asymmetric3[,-1]
 
@@ -73,7 +74,7 @@ plot(fpdas3)
 }
 
 \dontrun{
-# Asymmetric data set clustering example (with shape=20).
+# Asymmetric data set clustering example (with shape 20).
 data('asymmetric20')
 x<-asymmetric20[,-1]
 

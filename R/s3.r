@@ -1,6 +1,6 @@
 
 
-plot.FPDclustering=function(x, ...){
+plot.FPDclustering=function(x,maxVar=30, ...){
   label=as.character(x$label)
   par(mfrow=c(1,1))
   Silh(x$probability)
@@ -10,8 +10,14 @@ plot.FPDclustering=function(x, ...){
       theme_bw())
    print( pairs(x$data,col=label, ...))
   }else{
-    ggparcoord(cbind(cluster=(label),x$data),groupColumn = 1, columns=2:11)+ 
-      theme_bw()+ggtitle('First 10 varaibles')
+      end=1
+   repeat {
+     begin=end+1
+     end=min(begin+9,ncol(x$data))
+   print( ggparcoord(cbind(cluster=(label),x$data),groupColumn = 1, columns=begin:end)+ 
+      theme_bw())
+                         
+  if(end==ncol(x$data)|end>maxVar){break}}
   }
   if( exists('cont.loc',where=x)){
     if(length(x$cont.loc)>1){
