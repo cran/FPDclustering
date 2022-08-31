@@ -1,21 +1,23 @@
 
 
+
 plot.FPDclustering=function(x,maxVar=30, ...){
-  label=as.character(x$label)
+  label=as.factor(x$label)
   par(mfrow=c(1,1))
+  prob=apply(x$probability,1,max)
   Silh(x$probability)
   if(ncol(x$data)<10){
     par(mfrow=c(1,1))
- print(   ggparcoord(cbind(cluster= label,x$data),groupColumn = 1, columns=2:(ncol(x$data)+1))+ 
-      theme_bw())
+ print(   ggparcoord(cbind(label= label,x$data,prob=prob),mapping=ggplot2::aes(color=as.factor(label)),columns=2:(ncol(x$data)+1))+ 
+      theme_bw()+scale_color_discrete("Clusters",labels=levels(label)))
    print( pairs(x$data,col=label, ...))
   }else{
       end=1
    repeat {
      begin=end+1
      end=min(begin+9,ncol(x$data))
-   print( ggparcoord(cbind(cluster=(label),x$data),groupColumn = 1, columns=begin:end)+ 
-      theme_bw())
+   print( ggparcoord(cbind(label=(label),x$data),mapping=ggplot2::aes(color=as.factor(label)), columns=begin:end)+ 
+      theme_bw()+scale_color_discrete("Clusters",labels=levels(label)))
                          
   if(end==ncol(x$data)|end>maxVar){break}}
   }
@@ -23,15 +25,15 @@ plot.FPDclustering=function(x,maxVar=30, ...){
     if(length(x$cont.loc)>1){
     cont.loc=x$cont.loc
     if(ncol(x$data[,cont.loc])<10& ncol(x$data[,cont.loc])>1){
-      print(     ggparcoord(cbind(cluster= label,x$data[,cont.loc]),groupColumn = 1, columns=2:(ncol(x$data[,cont.loc])+1))+
-        theme_bw())
+      print(     ggparcoord(cbind(label= label,x$data[,cont.loc]),mapping=ggplot2::aes(color=as.factor(label)), columns=2:(ncol(x$data[,cont.loc])+1))+
+        theme_bw()+scale_color_discrete("Clusters",labels=levels(label)))
 
       print( pairs(x$data[,cont.loc],col=label, ...))
 
     }else if(ncol(x$data[,cont.loc])>=10){
 
-      print(     ggparcoord(cbind(cluster=(label),x$data[,cont.loc]),groupColumn = 1, columns=2:11)+
-        theme_bw()+ggtitle('First 10 varaibles'))
+      print(     ggparcoord(cbind(label=(label),x$data[,cont.loc]),mapping=ggplot2::aes(color=as.factor(label)), columns=2:11)+
+        theme_bw()+scale_color_discrete("Clusters",labels=levels(label))+ggtitle('First 10 varaibles'))
     }}
   
   
