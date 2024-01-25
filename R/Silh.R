@@ -1,5 +1,4 @@
-Silh <-
-function(p){
+Silh <-function(p){
 # %%%%Silhouette for probabilistic clustering methods
 # %%%%%INPUT
 # %p probability matrix
@@ -24,8 +23,16 @@ ll=round(ll/2)
   pl=c(0,pl[1:(nc-1)])
 tic=ll+pl
 #tcks=ll+pl;
-  barplot(ss,space=0, main="Silhouette plot", horiz=TRUE,xlab='Silhouette Value', ylab='Cluster',xpd=F,axes = FALSE)
-axis(2,at=tic, labels=(1:nc))
-axis(1,at=c(0,0.5,1), labels=c(round(1/nc,2),round((1/nc+1)/2,2),1))
+ # print(barplot(ss,space=0, main="Silhouette plot", horiz=TRUE,xlab='Silhouette Value', ylab='Cluster',xpd=F,axes = FALSE)
+  ssdf=data.frame(ss=ss,x=1:length(ss))
+ print( ggplot(ssdf, aes(x = 1:length(ss), y = ss)) + geom_col()+ 
+    theme_bw()+ coord_flip()+xlab("Silhouette Value") +
+    ylab("Cluster") + ggtitle('Silhouette plot')+  ggeasy::easy_center_title()+
+    scale_x_continuous(
+      breaks = as.numeric(tic),
+      labels = (1:nc)
+    ))
+ 
+  
 return(mean(ss))
 }

@@ -17,7 +17,7 @@ Silh(p)
 }
 }
 \details{The probabilistic silhouettes are an adaptation of the ones proposed by Menardi(2011) according to the following formula:
-\deqn{dbs_i =   (log(p_{im_k}/p_{im_1}))/max_i |log(p_{im_k}/p_{im_1})|},
+\deqn{dbs_i =   (log(p_{im_k}/p_{im_1}))/max_i |log(p_{im_k}/p_{im_1})|}
 
 where \eqn{m_k} is such that \eqn{x_i} belongs to cluster \eqn{k} and \eqn{m_1} is such that \eqn{p_{im_1}} is maximum for \eqn{m} different from\eqn{m_k}.
 %%  ~~ If necessary, more details than the description above ~~

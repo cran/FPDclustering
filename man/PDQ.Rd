@@ -7,13 +7,14 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-PDQ(x=NULL,k=2,ini='kmd',dist='euc',cent=NULL,ord=NULL,cat=NULL,bin=NULL,cont=NULL,w=NULL)
+PDQ(data=NULL,k=2,ini='kmd',dist='euc',cent=NULL,
+ord=NULL,cat=NULL,bin=NULL,cont=NULL,w=NULL)
 }
 
 
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{ A matrix or data frame such that rows correspond to observations and columns correspond to variables.
+  \item{data}{ A matrix or data frame such that rows correspond to observations and columns correspond to variables.
 %%     ~~Describe \code{data} here~~
 }
   \item{k}{A numerical parameter giving the number of clusters.
@@ -25,7 +26,7 @@ PDQ(x=NULL,k=2,ini='kmd',dist='euc',cent=NULL,ord=NULL,cat=NULL,bin=NULL,cont=NU
   \item{dist}{A parameter that selects the distance measure used. Options available are Eucledean ("euc"), Gower ("gower") and chi square ("chi").
 %%     ~~Describe \code{method} here~~
 }
-  \item{cent}{User inputed centers if method selected is "random".
+  \item{cent}{User inputted centers if ini is set to "center".
 %%     ~~Describe \code{cent} here~~
 }  
 \item{ord}{column indices of the x matrix indicating which columns are ordinal variables.
@@ -39,7 +40,7 @@ PDQ(x=NULL,k=2,ini='kmd',dist='euc',cent=NULL,ord=NULL,cat=NULL,bin=NULL,cont=NU
 }  
 \item{cont}{column indices of the x matrix indicating which columns are  continuous variables.
 }
-\item{w}{numerical vector same length as the columns of the data, ccontaining the variable weights when using Gower distance, equal weights  by default.
+\item{w}{numerical vector same length as the columns of the data, containing the variable weights when using Gower distance, equal weights  by default.
 }
 %%     ~~Describe \code{cent} here~~
 
@@ -87,7 +88,7 @@ x2=cbind(x2,rbinom(200,4,0.7),rbinom(200,4,0.7))
 x=rbind(x1,x2) ##Data set
 
 #### Performing PDQ
-pdq_class<-PDQ(x=x,k=2, ini="random", dist="gower", cont= 1:4, cat = 5:6)
+pdq_class<-PDQ(data=x,k=2, ini="random", dist="gower", cont= 1:4, cat = 5:6)
 
 ###Output
 table(l,pdq_class$label)

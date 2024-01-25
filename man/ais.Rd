@@ -9,7 +9,7 @@
 }
 \usage{data(ais)}
 \format{
- A data frame with 202 observations and 13 variable.
+ A data frame with 202 observations and 13 variables.
  \describe{
 \item{rcc}{ red blood cell count, in}
 \item{wcc}{ while blood cell count, in per liter}

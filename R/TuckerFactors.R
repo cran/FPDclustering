@@ -1,4 +1,4 @@
-TuckerFactors<- function(data=NULL,  nc=2){
+TuckerFactors<- function(data=NULL,  k=2){
 
 # %heuristic approach to cope with the choice of Tucker 3 factors.
 # %we choose the minimum number of factors that corresponds to a significant value 
@@ -14,7 +14,7 @@ TuckerFactors<- function(data=NULL,  nc=2){
 # 
 # 
 # %mi=1;
-
+nc=k
 n=nrow(data)
 J=ncol(data)
 

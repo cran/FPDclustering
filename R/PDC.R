@@ -14,6 +14,7 @@ PDC<- function(data=NULL,  k=2) {
 #probability to belong to each class 
   #JDF  join distance function
   #cont=number of iterations until convergence
+
   if((!is.double(k))&(!is.integer(k))){stop("The number of clusters (k) must take an integer value.")}
   if(k<2){stop("The number of clusters (k) must be greater than one.");}
   if((k-round(k)!=0)){stop("The number of clusters (k) must be a whole number.");}

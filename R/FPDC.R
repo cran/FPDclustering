@@ -5,6 +5,7 @@ FPDC<- function(data=NULL,  k=2, nf=2, nu=2){
 #   %data=data matrix  nxp
 #   %k= number of clusters
 #   %nf= number of factors
+#   %nu= number of factors
 #   %%%%%%%OUTPUT%%%%%%%%%%
 #   %la=cluster labels
 #   %iter= number of iterations

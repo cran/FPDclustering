@@ -5,7 +5,7 @@
 Plots for FPDclusteringt Objects
 }
 \description{
-Probability Silhouette plot, Scatterplot up to 10 varaibles, and  parallel coordinate plot up to 10 variables, for objects of class FPDclustering.
+Probability Silhouette plot, Scatterplot up to  MaxVar variables, and  parallel coordinate plot up to MaxVar variables, for objects of class FPDclustering.
 }
 \usage{
 \method{plot}{FPDclustering}(x, maxVar=30, ... ) 

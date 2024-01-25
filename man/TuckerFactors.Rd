@@ -8,14 +8,14 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-TuckerFactors(data = NULL, nc = 2)
+TuckerFactors(data = NULL, k = 2)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{data}{A matrix or data frame such that rows correspond to observations and columns correspond to variables.
 %%     ~~Describe \code{data} here~~
 }
-  \item{nc}{A numerical parameter giving the number of clusters
+  \item{k}{A numerical parameter giving the number of clusters
 %%     ~~Describe \code{nc} here~~
 }
 }

@@ -7,7 +7,7 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-GPDC(data=NULL,k=2,method="kmedoids", nr=5,iter=100)
+GPDC(data=NULL,k=2,ini="kmedoids", nr=5,iter=100)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -17,10 +17,10 @@ GPDC(data=NULL,k=2,method="kmedoids", nr=5,iter=100)
   \item{k}{A numerical parameter giving the number of clusters
 %%     ~~Describe \code{K} here~~
 }
-  \item{method}{A parameter that selects center starts. Options available are random ("random"), kmedoid ("kmedoid", by default), and PDC ("PDclust").
+  \item{ini}{A parameter that selects center starts. Options available are random ("random"), kmedoid ("kmedoid", by default), and PDC ("PDclust").
 %%     ~~Describe \code{method} here~~
 }
-  \item{nr}{Number of random starts when method set to "random"
+  \item{nr}{Number of random starts when ini set to "random"
 %%     ~~Describe \code{method} here~~
 }
   \item{iter}{Maximum number of iterations
@@ -61,7 +61,7 @@ data(ais)
 dataSEL=ais[,c(10,3,5,8)]
 
 #Clustering
-res=GPDC(dataSEL,k=2,method = "kmedoids")
+res=GPDC(dataSEL,k=2,ini = "kmedoids")
 
 #Results
 table(res$label,ais$sex)

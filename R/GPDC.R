@@ -1,4 +1,4 @@
-GPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
+GPDC<- function(data=NULL,  k=2, ini="kmedoids",nr=5,iter=100) {
   # Cluster the data whit pd-Gaussian Algoritmh
   #
   #
@@ -19,6 +19,7 @@ GPDC<- function(data=NULL,  k=2, method="kmedoids",nr=5,iter=100) {
 #   if((k-round(k)!=0)){stop("The number of clusters (k) must be a whole number.");}
 #   data=as.matrix(data)
 #   if(!is.double(data)){stop("All elements of data must have type double.");}
+  method=ini
   n=nrow(data)
   J=ncol(data)
  temp.center<-list()

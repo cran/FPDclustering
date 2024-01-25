@@ -1,4 +1,4 @@
-PDQ<-function(x=NULL,k=2,ini="kmd",dist="euc",cent=NULL,ord=NULL,cat=NULL,bin=NULL,cont=NULL,w=NULL)
+PDQ<-function(data=NULL,k=2,ini="kmd",dist="euc",cent=NULL,ord=NULL,cat=NULL,bin=NULL,cont=NULL,w=NULL)
 
 #%%%%%%INPUT%%%%%%%%%
   
@@ -18,7 +18,7 @@ PDQ<-function(x=NULL,k=2,ini="kmd",dist="euc",cent=NULL,ord=NULL,cat=NULL,bin=NU
 #jdfvector  join distance function per iteration
 
 {K=k
-    data=x
+ x=data
     method=ini
   distance=dist
   ord.loc=ord
@@ -102,7 +102,8 @@ PDQ<-function(x=NULL,k=2,ini="kmd",dist="euc",cent=NULL,ord=NULL,cat=NULL,bin=NU
         
     #check classification
     class<-apply(update$prob.m,1,which.max)
-    
+    if(is.null(ord)&is.null(cat)&is.null(bin)&is.null(cont)){
+    cont.loc=1:ncol(data)}
     #output
     out<-list(label=class,centers=update$center, clust_size=update$clust_size,probability=update$prob.m,JDF=update$jdfFinal, iter=update$count,jdfvector=update$jdfseq,data=data,cont.loc=cont.loc)
     class(out) <- "FPDclustering"
@@ -398,7 +399,10 @@ gowers_dist<-function(data,center, K,ord.loc=NULL,cat.loc=NULL,bin.loc=NULL,cont
             }
             #euc.dis<-sqrt(sum(temp.vec[c(cont.loc)]))*(length(cont.loc)/length(label))+sqrt(sum(temp.vec[c(ord.loc)]))*(length(ord.loc)/length(label))
             euc.dis<-sqrt(sum(temp.vec[cont.loc]))*(length(cont.loc)/length(label))+sum(temp.vec[ord.loc])*(length(ord.loc)/length(label))
-            cat.dis<-sum(temp.vec[c(cat.loc,bin.loc)])/length(label)
+            cat.dis<-sum(temp.vec[c(cat.loc,bin.loc)])*((length(cat.loc)+length(bin.loc))/length(label))
+            
+            ######Modified here  to fix weights Dec 22 2023
+            
             dist.mat[l,m]<-sum(euc.dis,cat.dis) }
     }
     
