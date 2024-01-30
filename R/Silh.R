@@ -26,8 +26,8 @@ tic=ll+pl
  # print(barplot(ss,space=0, main="Silhouette plot", horiz=TRUE,xlab='Silhouette Value', ylab='Cluster',xpd=F,axes = FALSE)
   ssdf=data.frame(ss=ss,x=1:length(ss))
  print( ggplot(ssdf, aes(x = 1:length(ss), y = ss)) + geom_col()+ 
-    theme_bw()+ coord_flip()+xlab("Silhouette Value") +
-    ylab("Cluster") + ggtitle('Silhouette plot')+  ggeasy::easy_center_title()+
+    theme_bw()+ coord_flip()+ylab("Silhouette Value") +
+    xlab("Cluster") + ggtitle('Silhouette plot')+  ggeasy::easy_center_title()+
     scale_x_continuous(
       breaks = as.numeric(tic),
       labels = (1:nc)
