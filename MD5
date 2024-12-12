@@ -1,4 +1,4 @@
-180728dc27405a7dbdeee6d86acc655a *DESCRIPTION
+fc2b2fe8c6b8f6a0e0dfbee3f2909933 *DESCRIPTION
 70cd006b3c85b5162b43d4c739344c46 *NAMESPACE
 4b74a8dc8b5f499cd9105822369b94d5 *R/FPDC-internal.R
 ef0d70d973460a9019f444c17aa12949 *R/FPDC.R
@@ -18,6 +18,7 @@ f6cab08a989808266140641eab4502bd *data/ais.rda
 4515975b43e380cdda85b47e01b66a08 *data/asymmetric3.rda
 856fb9e3e0515c623d1d0fab8b298e98 *data/datalist
 24a2cf1ac83ae4f6fdcebd636459abfd *data/outliers.rda
+dbb3b85c606c194955968d670040aada *inst/CITATION
 04810b5bd2fa15798ed7c62e14381dc4 *man/Country_data.Rd
 41c41fe7fbe7fbb7dc418049ff2a18f1 *man/FPDC.Rd
 2b596896cd7714fdcdc86f214d9431fe *man/GPDC.Rd

@@ -1,0 +1,15 @@
+bibentry(bibtype = "Article",
+  title        = "{FPDclustering}: a comprehensive {R} package for probabilistic distance clustering based methods",
+  author       = c(person(given = "Cristina",
+                          family = "Tortora",
+                          email = "cristina.tortora@sjsu.edu"),
+                   person(given = "Francesco",
+                          family = "Palumbo")),
+  journal      = "Computational Statistics",
+  year         = "2024",
+  pages        = "1--24",
+  doi          = "10.1007/s00180-024-01490-5",
+
+  header       = "To cite FPDclustering in publications use:"
+)
+
