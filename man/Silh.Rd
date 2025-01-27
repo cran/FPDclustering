@@ -37,7 +37,7 @@ where \eqn{m_k} is such that \eqn{x_i} belongs to cluster \eqn{k} and \eqn{m_1} 
 }
 
 \examples{
-\dontrun{
+\donttest{
 # Asymmetric data set silhouette example (with shape=3).
 data('asymmetric3')
 x<-asymmetric3[,-1]
@@ -45,7 +45,7 @@ fpdas3=FPDC(x,4,3,3)
 Silh(fpdas3$probability)
 }
 
-\dontrun{
+\donttest{
 # Asymmetric data set shiluette example (with shape=20).
 data('asymmetric20')
 x<-asymmetric20[,-1]
@@ -53,7 +53,7 @@ fpdas20=FPDC(x,4,3,3)
 Silh(fpdas20$probability)
 }
 
-\dontrun{
+\donttest{
 # Shiluette example with outliers.
 data('outliers')
 x<-outliers[,-1]

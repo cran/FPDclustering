@@ -2,7 +2,7 @@
 \alias{plot.FPDclustering}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Plots for FPDclusteringt Objects
+Plots for FPDclustering objects
 }
 \description{
 Probability Silhouette plot, Scatterplot up to  MaxVar variables, and  parallel coordinate plot up to MaxVar variables, for objects of class FPDclustering.

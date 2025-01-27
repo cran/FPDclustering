@@ -58,7 +58,7 @@ Tortora C., \emph{Non-hierarchical clustering methods on factorial subspaces}, 2
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-\dontrun{
+\donttest{
 # Asymmetric data set clustering example (with shape 3).
 data('asymmetric3')
 x<-asymmetric3[,-1]
@@ -73,7 +73,7 @@ summary(fpdas3)
 plot(fpdas3)
 }
 
-\dontrun{
+\donttest{
 # Asymmetric data set clustering example (with shape 20).
 data('asymmetric20')
 x<-asymmetric20[,-1]
@@ -88,7 +88,7 @@ summary(fpdas20)
 plot(fpdas20)
 }
 
-\dontrun{
+\donttest{
 # Clustering example with outliers.
 data('outliers')
 x<-outliers[,-1]

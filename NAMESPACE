@@ -6,4 +6,6 @@ importFrom("ggeasy","easy_center_title")
 export(FPDC, PDC, Silh, TuckerFactors, PDQ,GPDC, TPDC)
 S3method(summary,FPDclustering)
 S3method(plot,FPDclustering)
+S3method(print,FPDclustering)
+
 

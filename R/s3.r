@@ -39,7 +39,12 @@ plot.FPDclustering=function(x,maxVar=30, ...){
 }
 
 
-
+print.FPDclustering=function(x, ...){
+  t=ls(x)
+  cat("Available components:")
+  print( t)
+  
+}
 summary.FPDclustering=function(object, ...){
   t=as.data.frame( table(object$label))
   names(t)[1]="Cluster"

@@ -55,7 +55,7 @@ xp=TuckerFactors(asymmetric3[,-1], nc = 4)
 
 }
 
-\dontrun{
+\donttest{
 # Asymmetric data set example (with shape=20).
 data('asymmetric20')
 xp=TuckerFactors(asymmetric20[,-1], nc = 4)
