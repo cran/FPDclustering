@@ -74,7 +74,7 @@ doi.org/10.1017/S0269964808000351.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-
+\donttest{
 #Mixed type data
 
 sig=matrix(0.7,4,4)
@@ -121,5 +121,5 @@ pdq2=PDQ(data2,2,ini="random",dist="euc")
 table(rep(c(1,2),each=100),pdq2$label)
 plot(pdq2)
 summary(pdq2)
-}
+}}
 

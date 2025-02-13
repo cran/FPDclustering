@@ -23,14 +23,16 @@ J=ncol(data)
 pd=PDC(data,nc)
 c=pd$centers
 
-ddt=matrix(0,n,nc*J)
-dd=matrix(0,n,J)
-for( j in 1:nc){
-  for( i in 1:n){
-    v=t(as.vector(abs(data[i,]-c[j,])))
-    dd[i,]=v
-  }
-  ddt[,((1+J*(j-1)):(J*(j-1)+J))]=dd
+#ddt=matrix(0,n,nc*J)
+ddt=abs(sweep(data,2,c[1,],FUN='-'))
+#dd=matrix(0,n,J)
+for( j in 2:nc){
+  dd=abs(sweep(data,2,c[j,],FUN='-'))
+  # for( i in 1:n){
+  #   v=abs(data[i,]-c[j,])
+  #   dd[i,]=v
+  # }
+  ddt=cbind(ddt,dd)
 }
 
 m=10

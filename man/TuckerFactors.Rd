@@ -48,17 +48,11 @@ Factor pd-clustering. In Lausen et al., editor, \emph{Algorithms from and for Na
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-\dontrun{
-# Asymmetric data set example (with shape=3).
-data('asymmetric3')
-xp=TuckerFactors(asymmetric3[,-1], nc = 4)
-
-}
 
 \donttest{
 # Asymmetric data set example (with shape=20).
 data('asymmetric20')
-xp=TuckerFactors(asymmetric20[,-1], nc = 4)
+xp=TuckerFactors(asymmetric20[,-1], k = 4)
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
