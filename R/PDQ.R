@@ -119,10 +119,9 @@ corePDQ<- function(data=NULL,K,center,N,J,iter=100,clus.size,distance,ord.loc=NU
     jdf<-vector()
     cent.tot=.2
     count=1
-    epsilon=.01
-    
+    epsilon=0.00000001
     #run code until covergence by epsilon or iteration max
-    while(cent.tot>epsilon && count<iter)
+    while((count<10 || cent.tot>epsilon) && count<iter)
     {
         
         #calculate distances

@@ -1,8 +1,8 @@
 Package: FPDclustering
 Type: Package
 Title: PD-Clustering and Related Methods
-Version: 2.3.4
-Date: 2025-02-12
+Version: 2.3.5
+Date: 2025-03-05
 Authors@R: c(person(given = "Cristina",
                       family = "Tortora",
                       role = c("aut", "cre", "cph"),
@@ -26,9 +26,9 @@ Imports: ExPosition, cluster,rootSolve, MASS, klaR, GGally, ggplot2,
         ggeasy
 License: GPL (>= 2)
 NeedsCompilation: no
-Packaged: 2025-02-12 18:28:45 UTC; 011543324
+Packaged: 2025-03-06 03:15:00 UTC; 011543324
 Repository: CRAN
-Date/Publication: 2025-02-13 08:40:06 UTC
+Date/Publication: 2025-03-06 03:40:04 UTC
 Author: Cristina Tortora [aut, cre, cph],
   Noe Vidales [aut],
   Francesco Palumbo [aut],
